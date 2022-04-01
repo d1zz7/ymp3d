@@ -1,6 +1,10 @@
 {
   "name": "ymp3d",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/d1zz7/ymp3d.git"
+  },
   "description": "download mp3 from youtube",
   "main": "index.js",
   "scripts": {
