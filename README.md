@@ -1,4 +1,7 @@
 # ymp3d
+Download mp3 from youtube video
+
+Uses code from https://github.com/jameskyburz/youtube-audio-stream
 
 # usage
 ```javascript
@@ -25,4 +28,12 @@ y.on('finish',  function (fileName) {
 y.on('error', function (e) {
     console.log(e)
 })
+```
+# In order to specify your name/path to the file (default is the title of the video):
+
+```javascript
+
+y.Download('https://www.youtube.com/watch?v=vBGRz6s-1UA', 'your/path/filename.mp3')
+    .then(videoInfo => console.log(videoInfo))
+    .catch(e => console.log(e))
 ```
