@@ -1,9 +1,9 @@
 'use strict'
 // @d1zz7
-const audioStream = require('./audio-stream');
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg');
 const ffmpeg = require('fluent-ffmpeg');
 const { getVideoInfo, progressPercent } = require('./services');
+const getStream = require('./audioStream');
 const EventEmitter = require('events').EventEmitter;
 
 ffmpeg.setFfmpegPath(ffmpegPath.path) // ffmpeg path
@@ -11,7 +11,7 @@ ffmpeg.setFfmpegPath(ffmpegPath.path) // ffmpeg path
 class Ymp3 extends EventEmitter {
 
     async Download(url, outputPath = '') {
-        const stream = audioStream(url)
+        const stream = await getStream(url)
         const videoInfo = await getVideoInfo(url)
         const fileName = outputPath ? outputPath : videoInfo.name.replace('//', '') + '.mp3'
 

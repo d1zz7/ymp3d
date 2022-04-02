@@ -5,7 +5,7 @@
     "type": "git",
     "url": "git://github.com/d1zz7/ymp3d.git"
   },
-  "description": "download mp3 from youtube",
+  "description": "YouTube mp3 downloader",
   "main": "index.js",
   "scripts": {
     "test": "node example.js"

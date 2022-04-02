@@ -1,11 +1,15 @@
 # ymp3d
-Download mp3 from youtube video
+YouTube mp3 downloader
 
-Uses code from https://github.com/jameskyburz/youtube-audio-stream
+uses fluet-ffmpeg, ytld-core
+
+ffmpeg is not needed as ffmpeg-installer is used
+
+###My Telegram bot works on it - @YouTubeTmp3Bot (Ymp3 Bot)
 
 # usage
 ```javascript
-const Ymp3 = require('./index')
+const Ymp3 = require('ymp3d')
 
 const y = new Ymp3();
 
@@ -36,4 +40,9 @@ y.on('error', function (e) {
 y.Download('https://www.youtube.com/watch?v=vBGRz6s-1UA', 'your/path/filename.mp3')
     .then(videoInfo => console.log(videoInfo))
     .catch(e => console.log(e))
+```
+
+# test 
+```javascript
+npm run test
 ```
