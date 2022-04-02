@@ -17,7 +17,7 @@ npm install ymp3d
 ```javascript
 const Ymp3 = require('ymp3d')
 
-const y = new Ymp3();
+const y = new Ymp3()
 
 y.Download('https://www.youtube.com/watch?v=vBGRz6s-1UA')
     .then(videoInfo => console.log(videoInfo))
