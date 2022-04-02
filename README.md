@@ -5,7 +5,13 @@ uses fluet-ffmpeg, ytld-core
 
 ffmpeg is not needed as ffmpeg-installer is used
 
-###My Telegram bot works on it - @YouTubeTmp3Bot (Ymp3 Bot)
+### My Telegram bot works on it - @YouTubeTmp3Bot (Ymp3 Bot)
+
+# install
+
+```javascript
+npm install ymp3d
+```
 
 # usage
 ```javascript
