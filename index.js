@@ -5,6 +5,7 @@ const ffmpeg = require('fluent-ffmpeg');
 const { getVideoInfo, progressPercent } = require('./services');
 const getStream = require('./audioStream');
 const EventEmitter = require('events').EventEmitter;
+const sanitize = require('sanitize-filename');
 
 ffmpeg.setFfmpegPath(ffmpegPath.path) // ffmpeg path
 
@@ -13,7 +14,7 @@ class Ymp3 extends EventEmitter {
     async Download(url, outputPath = '') {
         const stream = await getStream(url)
         const videoInfo = await getVideoInfo(url)
-        const fileName = outputPath ? outputPath : videoInfo.name.replace(/\//g, '') + '.mp3'
+        const fileName = outputPath ? outputPath : sanitize(videoInfo.name + '.mp3')
 
         const outputOptions = [
             '-id3v2_version', '4',
