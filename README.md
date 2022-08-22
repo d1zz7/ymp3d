@@ -5,7 +5,6 @@ uses fluet-ffmpeg, ytld-core
 
 ffmpeg is not needed as ffmpeg-installer is used
 
-### My Telegram bot works on it - @YouTubeTmp3Bot (Ymp3 Bot)
 
 # install
 
@@ -17,7 +16,7 @@ npm install ymp3d
 ```javascript
 const Ymp3 = require('ymp3d')
 
-const y = new Ymp3();
+const y = new Ymp3()
 
 y.Download('https://www.youtube.com/watch?v=vBGRz6s-1UA')
     .then(videoInfo => console.log(videoInfo))
