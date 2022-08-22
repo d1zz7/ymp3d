@@ -4,12 +4,11 @@ const FFmpeg = require('fluent-ffmpeg')
 const { PassThrough } = require('stream')
 
 // get audio stream
-async function getStream(url) {
+async function getStream(url, videoParams, proxyAgent) {
     try {
         const video = await ytdl(url, {
-            videoFormat: 'mp4',
-            quality: 'lowest',
-            audioFormat: 'mp3'
+            ...videoParams,
+           requestOptions: { proxyAgent }
         })
 
         const stream = new PassThrough()

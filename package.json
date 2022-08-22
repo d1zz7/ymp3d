@@ -1,6 +1,6 @@
 {
   "name": "ymp3d",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "repository": {
     "type": "git",
     "url": "git://github.com/d1zz7/ymp3d.git"
@@ -20,6 +20,7 @@
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "fluent-ffmpeg": "^2.1.2",
+    "https-proxy-agent": "^5.0.1",
     "sanitize-filename": "^1.6.3",
     "ytdl-core": "4.10.0"
   }

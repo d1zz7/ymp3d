@@ -1,9 +1,9 @@
 # ymp3d
 YouTube mp3 downloader
 
-uses fluet-ffmpeg, ytld-core
+uses [fluet-ffmpeg](https://github.com/fluent-ffmpeg/node-fluent-ffmpeg), [ytld-core](https://github.com/fent/node-ytdl-core), [https-proxy-agent](https://github.com/TooTallNate/node-https-proxy-agent)
 
-ffmpeg is not needed as ffmpeg-installer is used
+ffmpeg is not needed as [ffmpeg-installer](https://github.com/kribblo/node-ffmpeg-installer) is used
 
 
 # install
@@ -12,7 +12,7 @@ ffmpeg is not needed as ffmpeg-installer is used
 npm install ymp3d
 ```
 
-# usage
+## usage
 ```javascript
 const Ymp3 = require('ymp3d')
 
@@ -38,7 +38,20 @@ y.on('error', function (e) {
     console.log(e)
 })
 ```
-# In order to specify your name/path to the file (default is the title of the video):
+
+## with params
+```javascript
+const y = new Ymp3({
+    proxy: 'http://185.131.176.21:8000',
+    videoParams: {
+        videoFormat: 'mp4',
+        quality: 'lowest',
+        audioFormat: 'mp3',
+    }
+})
+```
+
+### In order to specify your name/path to the file (default is the title of the video):
 
 ```javascript
 
@@ -47,7 +60,7 @@ y.Download('https://www.youtube.com/watch?v=vBGRz6s-1UA', 'your/path/filename.mp
     .catch(e => console.log(e))
 ```
 
-# test 
+### test 
 ```javascript
 npm run test
 ```
